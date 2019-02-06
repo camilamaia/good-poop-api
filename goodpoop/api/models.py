@@ -64,7 +64,6 @@ class Review(models.Model):
     )
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
     is_free = models.BooleanField(default=True)
-
     comment = models.TextField(null=True, blank=True)
     cleanness_rate = models.IntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(5)], null=True, blank=True
@@ -72,10 +71,10 @@ class Review(models.Model):
     soundproofing_rate = models.IntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(5)], null=True, blank=True
     )
-    soap_quality_rate = models.IntegerField(
+    soap_rate = models.IntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(5)], null=True, blank=True
     )
-    drying_hands_quality_rate = models.IntegerField(
+    drying_hands_rate = models.IntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(5)], null=True, blank=True
     )
     flush_power_rate = models.IntegerField(
@@ -90,7 +89,6 @@ class Review(models.Model):
     accessible_rate = models.IntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(5)], null=True, blank=True
     )
-
     has_toilet_brush = models.NullBooleanField()
     has_touchless_sink = models.NullBooleanField()
     has_touchless_flush = models.NullBooleanField()
